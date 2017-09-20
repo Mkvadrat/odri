@@ -6,6 +6,7 @@
             <div class="col-md-12">
   
                 <div class="slider">
+                    <?php if($banners){ ?>
                     <div id="banner<?php echo $module; ?>" class="owl-carousel owl-theme">
                       <?php foreach ($banners as $banner) { ?>
                       <div class="item">
@@ -17,6 +18,7 @@
                       </div>
                       <?php } ?>
                     </div>
+                    <?php } ?>
                 </div>
   
                 <div class="banner">
@@ -28,8 +30,10 @@
                     <section>
                         <p class="title-section">Акции</p>
                         <ul class="list-text-items">
+                          <?php if($all_news){ ?>
                           <?php foreach ($all_news as $news) { ?>
                             <li><a href="<?php echo $news['view']; ?>"><?php echo $news['title']; ?></a></li>
+                          <?php } ?>
                           <?php } ?>
                         </ul>
                     </section>
@@ -39,8 +43,10 @@
                     <section>
                         <p class="title-section">Новые бренды</p>
                         <ul class="list-brands-aside">
+                          <?php if($all_brands){ ?>
                           <?php foreach ($all_brands as $brands) { ?>
                             <li><a href="<?php echo $brands['view']; ?>"><img src="<?php echo $brands['image']; ?>" alt=""></a></li>
+                          <?php } ?>
                           <?php } ?>
                         </ul>
                     </section>
@@ -52,6 +58,7 @@
                         <p class="title-section">Горячие Новинки</p>
   
                         <ul class="list-products">
+                          <?php if($products){ ?>
                           <?php foreach ($products as $product) { ?>
                             <li>
                                 <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" /></a>
@@ -69,6 +76,7 @@
                                 <a onclick="cart.add('<?php echo $product['product_id']; ?>');">Купить</a>
                             </li>
                           <?php } ?>
+                          <?php } ?>
                         </ul>
                     </section>
   
@@ -76,10 +84,11 @@
                         <p class="title-section">Хиты Продаж</p>
   
                         <ul class="list-products">
+                          <?php if($bestseller){ ?>
                           <?php foreach ($bestseller as $seller) { ?>
                             <li>
                               <a href="<?php echo $seller['href']; ?>"><img src="<?php echo $seller['thumb']; ?>" alt="<?php echo $seller['name']; ?>" title="<?php echo $seller['name']; ?>" /></a>
-                              <p class="product-name"><?php echo $product['name']; ?>
+                              <p class="product-name"><?php echo $seller['name']; ?>
                               <?php if ($seller['price']) { ?>
                                 <?php if (!$seller['special']) { ?>
                                 <b class="price-product"><?php echo $seller['price']; ?></b>
@@ -92,6 +101,7 @@
                               <?php } ?></p>
                               <a onclick="cart.add('<?php echo $seller['product_id']; ?>');">Купить</a>
                             </li>
+                          <?php } ?>
                           <?php } ?>
                         </ul>
                     </section>

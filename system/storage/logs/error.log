@@ -210,3 +210,6 @@
 2017-09-18 16:17:44 - PHP Notice:  Undefined index: view in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\extension\module\odrimain.tpl on line 43
 2017-09-18 16:17:44 - PHP Notice:  Undefined index: view in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\extension\module\odrimain.tpl on line 43
 2017-09-18 16:17:44 - PHP Notice:  Undefined index: view in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\extension\module\odrimain.tpl on line 43
+2017-09-19 15:32:54 - PHP Notice:  Undefined variable: product in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\product.tpl on line 50
+2017-09-19 16:25:02 - PHP Notice:  Undefined index: descr_featured in D:\OpenServer\domains\odri.loc\admin\view\template\catalog\product_form.tpl on line 70
+2017-09-19 16:26:24 - PHP Notice:  Undefined index: descr_featured in D:\OpenServer\domains\odri.loc\admin\view\template\catalog\product_form.tpl on line 70

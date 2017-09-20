@@ -48,51 +48,12 @@
                 <?php } else { ?>
                 <option value="select"><?php echo $text_select; ?></option>
                 <?php } ?>
-                <?php if ($type == 'radio') { ?>
-                <option value="radio" selected="selected"><?php echo $text_radio; ?></option>
-                <?php } else { ?>
-                <option value="radio"><?php echo $text_radio; ?></option>
-                <?php } ?>
-                <?php if ($type == 'checkbox') { ?>
-                <option value="checkbox" selected="selected"><?php echo $text_checkbox; ?></option>
-                <?php } else { ?>
-                <option value="checkbox"><?php echo $text_checkbox; ?></option>
-                <?php } ?>
                 </optgroup>
                 <optgroup label="<?php echo $text_input; ?>">
                 <?php if ($type == 'text') { ?>
                 <option value="text" selected="selected"><?php echo $text_text; ?></option>
                 <?php } else { ?>
                 <option value="text"><?php echo $text_text; ?></option>
-                <?php } ?>
-                <?php if ($type == 'textarea') { ?>
-                <option value="textarea" selected="selected"><?php echo $text_textarea; ?></option>
-                <?php } else { ?>
-                <option value="textarea"><?php echo $text_textarea; ?></option>
-                <?php } ?>
-                </optgroup>
-                <optgroup label="<?php echo $text_file; ?>">
-                <?php if ($type == 'file') { ?>
-                <option value="file" selected="selected"><?php echo $text_file; ?></option>
-                <?php } else { ?>
-                <option value="file"><?php echo $text_file; ?></option>
-                <?php } ?>
-                </optgroup>
-                <optgroup label="<?php echo $text_date; ?>">
-                <?php if ($type == 'date') { ?>
-                <option value="date" selected="selected"><?php echo $text_date; ?></option>
-                <?php } else { ?>
-                <option value="date"><?php echo $text_date; ?></option>
-                <?php } ?>
-                <?php if ($type == 'time') { ?>
-                <option value="time" selected="selected"><?php echo $text_time; ?></option>
-                <?php } else { ?>
-                <option value="time"><?php echo $text_time; ?></option>
-                <?php } ?>
-                <?php if ($type == 'datetime') { ?>
-                <option value="datetime" selected="selected"><?php echo $text_datetime; ?></option>
-                <?php } else { ?>
-                <option value="datetime"><?php echo $text_datetime; ?></option>
                 <?php } ?>
                 </optgroup>
               </select>
@@ -160,14 +121,14 @@ var option_value_row = <?php echo $option_value_row; ?>;
 
 function addOptionValue() {
 	html  = '<tr id="option-value-row' + option_value_row + '">';	
-    html += '  <td class="text-left"><input type="hidden" name="option_value[' + option_value_row + '][option_value_id]" value="" />';
+  html += '  <td class="text-left"><input type="hidden" name="option_value[' + option_value_row + '][option_value_id]" value="" />';
 	<?php foreach ($languages as $language) { ?>
 	html += '    <div class="input-group">';
 	html += '      <span class="input-group-addon"><img src="language/<?php echo $language['code']; ?>/<?php echo $language['code']; ?>.png" title="<?php echo $language['name']; ?>" /></span><input type="text" name="option_value[' + option_value_row + '][option_value_description][<?php echo $language['language_id']; ?>][name]" value="" placeholder="<?php echo $entry_option_value; ?>" class="form-control" />';
-    html += '    </div>';
+  html += '    </div>';
 	<?php } ?>
 	html += '  </td>';
-    html += '  <td class="text-left"><a href="" id="thumb-image' + option_value_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="option_value[' + option_value_row + '][image]" value="" id="input-image' + option_value_row + '" /></td>';
+  html += '  <td class="text-left"><a href="" id="thumb-image' + option_value_row + '" data-toggle="image" class="img-thumbnail"><img src="<?php echo $placeholder; ?>" alt="" title="" data-placeholder="<?php echo $placeholder; ?>" /></a><input type="hidden" name="option_value[' + option_value_row + '][image]" value="" id="input-image' + option_value_row + '" /></td>';
 	html += '  <td class="text-right"><input type="text" name="option_value[' + option_value_row + '][sort_order]" value="" placeholder="<?php echo $entry_sort_order; ?>" class="form-control" /></td>';
 	html += '  <td class="text-left"><button type="button" onclick="$(\'#option-value-row' + option_value_row + '\').remove();" data-toggle="tooltip" title="<?php echo $button_remove; ?>" class="btn btn-danger"><i class="fa fa-minus-circle"></i></button></td>';
 	html += '</tr>';	

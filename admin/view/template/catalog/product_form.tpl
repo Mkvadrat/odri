@@ -64,6 +64,12 @@
                       <textarea name="product_description[<?php echo $language['language_id']; ?>][description]" placeholder="<?php echo $entry_description; ?>" id="input-description<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['description'] : ''; ?></textarea>
                     </div>
                   </div>
+									<div class="form-group">
+                    <label class="col-sm-2 control-label" for="input-description-featured<?php echo $language['language_id']; ?>">Описание для сопутствующих товаров</label>
+                    <div class="col-sm-10">
+                      <textarea name="product_description[<?php echo $language['language_id']; ?>][descr_featured]" placeholder="Описание для сопутствующих товаров" id="input-description-featured<?php echo $language['language_id']; ?>" data-lang="<?php echo $lang; ?>" class="form-control summernote"><?php echo isset($product_description[$language['language_id']]) ? $product_description[$language['language_id']]['descr_featured'] : ''; ?></textarea>
+                    </div>
+                  </div>
                   <div class="form-group">
                     <label class="col-sm-2 control-label" for="input-meta-title<?php echo $language['language_id']; ?>"><?php echo $entry_meta_title; ?></label>
                     <div class="col-sm-10">
@@ -1194,8 +1200,8 @@ $('input[name=\'option\']').autocomplete({
 		html += '	<div class="form-group">';
 		html += '	  <label class="col-sm-2 control-label" for="input-required' + option_row + '"><?php echo $entry_required; ?></label>';
 		html += '	  <div class="col-sm-10"><select name="product_option[' + option_row + '][required]" id="input-required' + option_row + '" class="form-control">';
-		html += '	      <option value="1"><?php echo $text_yes; ?></option>';
 		html += '	      <option value="0"><?php echo $text_no; ?></option>';
+		html += '	      <option value="1"><?php echo $text_yes; ?></option>';
 		html += '	  </select></div>';
 		html += '	</div>';
 

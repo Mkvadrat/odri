@@ -12,6 +12,7 @@ class ModelCatalogProduct extends Model {
 				'product_id'       => $query->row['product_id'],
 				'name'             => $query->row['name'],
 				'description'      => $query->row['description'],
+				'descr_featured'   => $query->row['descr_featured'],
 				'meta_title'       => $query->row['meta_title'],
 				'meta_h1'          => $query->row['meta_h1'],
 				'meta_description' => $query->row['meta_description'],

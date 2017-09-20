@@ -57,6 +57,14 @@
 <script type="text/javascript" src="catalog/view/theme/odri/js/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>
 <link rel="stylesheet" href="catalog/view/theme/odri/js/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7" type="text/css" media="screen" />
 <script type="text/javascript" src="catalog/view/theme/odri/js/source/helpers/jquery.fancybox-thumbs.js?v=1.0.7"></script>
+<!-- EZ-GALLERY -->
+<script src="catalog/view/theme/odri/js/ezgallery/jquery.easing.min.js"></script>
+<script src="catalog/view/theme/odri/js/ezgallery/jquery.fancybox-plus.js"></script>
+<script src="catalog/view/theme/odri/js/ezgallery/jquery.ez-plus.js"></script>
+<script src="catalog/view/theme/odri/js/ezgallery/web.js"></script>
+<link rel="stylesheet" href="catalog/view/theme/odri/css/ezgallery/jquery.fancybox-plus.css">
+<link rel="stylesheet" href="catalog/view/theme/odri/css/ezgallery/jquery.ez-plus.css">
+
 <!-- HTML5 for IE -->
 <!--[if IE]>
 <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -65,7 +73,7 @@
 <?php foreach ($styles as $style) { ?>
 <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
 <?php } ?>
-<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/odri.js" type="text/javascript"></script>
 <?php foreach ($links as $link) { ?>
 <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
 <?php } ?>

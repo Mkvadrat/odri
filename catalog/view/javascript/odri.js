@@ -51,7 +51,7 @@ $(document).ready(function() {
 	});
 
 	/* Search */
-	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
+	$('#search input[name=\'search\']').parent().find('input[type=\'submit\']').on('click', function() {
 		var url = $('base').attr('href') + 'index.php?route=product/search';
 
 		var value = $('header #search input[name=\'search\']').val();
@@ -65,7 +65,7 @@ $(document).ready(function() {
 
 	$('#search input[name=\'search\']').on('keydown', function(e) {
 		if (e.keyCode == 13) {
-			$('header #search input[name=\'search\']').parent().find('button').trigger('click');
+			$('header #search input[name=\'search\']').parent().find('input[type=\'submit\']').trigger('click');
 		}
 	});
 
@@ -144,10 +144,10 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				$('#cart > a').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				$('#cart > a').button('reset');
 			},
 			success: function(json) {
 				$('.alert, .text-danger').remove();
@@ -157,11 +157,11 @@ var cart = {
 				}
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					$('.bread-crumbs').after('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
-						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+						$('#cart > a').html('<span>Корзина:</span> <em id="cart-total">' + json['total'] + '</em>');
 					}, 100);
 
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
@@ -181,15 +181,15 @@ var cart = {
 			data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				$('#cart > a').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				$('#cart > a').button('reset');
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > a').html('<span>Корзина:</span> <em id="cart-total">' + json['total'] + '</em>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -203,7 +203,7 @@ var cart = {
 			}
 		});
 	},
-	'remove': function(key) {
+	'remove': function(key) { 
 		$.ajax({
 			url: 'index.php?route=checkout/cart/remove',
 			type: 'post',
@@ -218,7 +218,7 @@ var cart = {
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > a').html('<span>Корзина:</span> <em id="cart-total">' + json['total'] + '</em>');
 				}, 100);
 				
 				var now_location = String(document.location.pathname);
@@ -247,15 +247,15 @@ var voucher = {
 			data: 'key=' + key,
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				$('#cart > a').button('loading');
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				$('#cart > a').button('reset');
 			},
 			success: function(json) {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
-					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+					$('#cart > a').html('<span>Корзина:</span> <em id="cart-total">' + json['total'] + '</em>');
 				}, 100);
 
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -315,7 +315,7 @@ var compare = {
 				$('.alert').remove();
 
 				if (json['success']) {
-					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
+					$('.bread-crumbs').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + ' <button type="button" class="close" data-dismiss="alert">&times;</button></div>');
 
 					$('#compare-total').html(json['total']);
 

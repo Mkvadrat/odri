@@ -66,7 +66,7 @@ class ControllerExtensionModuleOdrimain extends Controller {
 			'start' => 0,
 		);
 		
-		$all_brands = $this->model_catalog_manufacturer->getManufacturers($news_data);
+		$all_brands = $this->model_catalog_manufacturer->getManufacturers($brands_data);
 		
 		$data['all_brands'] = array();
 			 

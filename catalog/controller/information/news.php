@@ -11,11 +11,13 @@ class ControllerInformationNews extends Controller {
 		
 		$data['breadcrumbs'][] = array(
 			'text' 		=> 'Главная',
-			'href' 		=> $this->url->link('common/home')
+			'href' 		=> $this->url->link('common/home'),
+			'separator' => $this->language->get('text_separator')
 		);
 		$data['breadcrumbs'][] = array(
 			'text' 		=> $this->language->get('heading_title'),
-			'href' 		=> $this->url->link('information/news')
+			'href' 		=> $this->url->link('information/news'),
+			'separator' => $this->language->get('text_separator')
 		);
 		  
 		$url = '';
@@ -32,8 +34,8 @@ class ControllerInformationNews extends Controller {
 		
 		$filter_data = array(
 			'page' 	=> $page,
-			'limit' => 10,
-			'start' => 10 * ($page - 1),
+			'limit' => 2,
+			'start' => 2 * ($page - 1),
 		);
 		
 		$total = $this->model_catalog_news->getTotalNews();
@@ -41,12 +43,12 @@ class ControllerInformationNews extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $total;
 		$pagination->page = $page;
-		$pagination->limit = 10;
+		$pagination->limit = 2;
 		$pagination->url = $this->url->link('information/news', 'page={page}');
 		
 		$data['pagination'] = $pagination->render();
 	 
-		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($total - 10)) ? $total : ((($page - 1) * 10) + 10), $total, ceil($total / 10));
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 2) + 1 : 0, ((($page - 1) * 2) > ($total - 2)) ? $total : ((($page - 1) * 2) + 2), $total, ceil($total / 2));
 
 		$data['heading_title'] = $this->language->get('heading_title');
 		$data['text_title'] = $this->language->get('text_title');
@@ -63,13 +65,13 @@ class ControllerInformationNews extends Controller {
 		foreach ($all_news as $news) {
 			$data['all_news'][] = array (
 				'title' 		=> $news['title'],
-				'image'			=> $this->model_tool_image->resize($news['image'], 200, 200),
-				'description' 	=> strip_tags(html_entity_decode($news['short_description'])),
+				'image'			=> $this->model_tool_image->resize($news['image'], 732, 412),
+				'description' 	=> $news['short_description'],
 				'view' 			=> $this->url->link('information/news/news', 'news_id=' . $news['news_id']),
-				'date_added' 	=> date($this->language->get('date_format_short'), strtotime($news['date_added']))
+				'date_ended' 	=> date($this->language->get('date_format_short'), strtotime($news['date_ended'])),
 			);
 		}
-	 
+					 
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -97,18 +99,21 @@ class ControllerInformationNews extends Controller {
 	  
 		$data['breadcrumbs'][] = array(
 			'text' 			=> 'Главная',
-			'href' 			=> $this->url->link('common/home')
+			'href' 			=> $this->url->link('common/home'),
+			'separator' => $this->language->get('text_separator')
 		);
 	  
 		$data['breadcrumbs'][] = array(
 			'text' => $this->language->get('heading_title'),
-			'href' => $this->url->link('information/news')
+			'href' => $this->url->link('information/news'),
+			'separator' => $this->language->get('text_separator')
 		);
  
 		if ($news) {
 			$data['breadcrumbs'][] = array(
 				'text' 		=> $news['title'],
-				'href' 		=> $this->url->link('information/news/news', 'news_id=' . $news_id)
+				'href' 		=> $this->url->link('information/news/news', 'news_id=' . $news_id),
+				'separator' => $this->language->get('text_separator')
 			);
  
 			$this->document->setTitle($news['title']);
@@ -132,7 +137,8 @@ class ControllerInformationNews extends Controller {
 		} else {
 			$data['breadcrumbs'][] = array(
 				'text' 		=> $this->language->get('text_error'),
-				'href' 		=> $this->url->link('information/news', 'news_id=' . $news_id)
+				'href' 		=> $this->url->link('information/news', 'news_id=' . $news_id),
+				'separator' => $this->language->get('text_separator')
 			);
 	 
 			$this->document->setTitle($this->language->get('text_error'));

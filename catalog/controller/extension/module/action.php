@@ -1,12 +1,16 @@
-<?php  
-class ControllerExtensionModuleNews extends Controller {
-	public function index() {
-		$this->language->load('extension/module/news');
+<?php
+class ControllerExtensionModuleAction extends Controller {
+	public function index($setting) {
+		
+		if (!$setting['limit']) {
+			$setting['limit'] = 4;
+		}
+		
 		$this->load->model('catalog/news');
 		
 		$filter_data = array(
 			'page' => 1,
-			'limit' => 5,
+			'limit' => $setting['limit'],
 			'start' => 0,
 		);
 	 
@@ -25,6 +29,6 @@ class ControllerExtensionModuleNews extends Controller {
 			);
 		}
 		
-		return $this->load->view('extension/module/news', $data);
+		return $this->load->view('extension/module/action', $data);
 	}
 }

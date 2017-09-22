@@ -3,6 +3,7 @@ class ControllerExtensionModuleBrands extends Controller {
 	public function index() {
 		
 		$this->load->model('catalog/manufacturer');
+		$this->load->model('tool/image');
 		
 		//Brands
 		$brands_data = array(

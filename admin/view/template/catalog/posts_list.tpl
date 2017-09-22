@@ -49,7 +49,6 @@
 				  <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
 				  <td class="text-left"><?php echo $text_title; ?></td>
 				  <td class="text-left"><?php echo $text_short_description; ?></td>
-				  <td class="text-center">В модуле</td>
 				  <td class="text-left"><?php echo $text_date; ?></td>
 				  <td class="text-right"><?php echo $text_action; ?></td>
 				</tr>
@@ -61,7 +60,6 @@
 					<td width="1" style="text-align: center;"><input type="checkbox" name="selected[]" value="<?php echo $posts['posts_id']; ?>" /></td>
 					<td class="text-left"><a href="<?php echo $posts['edit']; ?>"><?php echo $posts['title']; ?></a></td>
 					<td class="text-left"><?php echo $posts['short_description']; ?></td>
-					<td class="text-center ajaxstatus" id="post<?php echo $posts['posts_id']; ?>" data-id="<?php echo $posts['posts_id']; ?>" data-value="<?php echo $posts['module']; ?>"><?php echo $posts['module_status']; ?></td>
 					<td class="text-left"><?php echo $posts['date_added']; ?></td>
 					<td class="text-right"><a href="<?php echo $posts['edit']; ?>"><?php echo $text_edit; ?></a></td>
 				  </tr>
@@ -82,27 +80,4 @@
     </div>
   </div>
 </div>
-<script type="text/javascript"><!--
-$('.ajaxstatus').click(function() {
-	var posts_id=$(this).data('id');
-	var value=$(this).data('value');
-	$.ajax({
-		url: 'index.php?route=catalog/posts/setModule&token=<?php echo $token; ?>',
-		type: 'get',
-		data: {posts_id:posts_id,value:value},
-		dataType: 'html',
-		success: function(html) {
-			if(html!=''){				
-				$('#post'+posts_id).html(html);
-				if(value==1){
-					$('#post'+posts_id).data('value',0);
-				} else {
-					$('#post'+posts_id).data('value',1);
-				}
-				if(value==0){ $('#post'+posts_id).css('background','rgb(117, 167, 77)'); } else { $('#post'+posts_id).css('background','rgb(245, 107, 107)'); }
-			}
-		}
-	});
-});
-//--></script>
 <?php echo $footer; ?>

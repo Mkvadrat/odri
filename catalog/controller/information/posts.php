@@ -32,8 +32,8 @@ class ControllerInformationPosts extends Controller {
 		
 		$filter_data = array(
 			'page' 	=> $page,
-			'limit' => 10,
-			'start' => 10 * ($page - 1),
+			'limit' => 2,
+			'start' => 2 * ($page - 1),
 		);
 		
 		$total = $this->model_catalog_posts->getTotalPosts();
@@ -41,12 +41,12 @@ class ControllerInformationPosts extends Controller {
 		$pagination = new Pagination();
 		$pagination->total = $total;
 		$pagination->page = $page;
-		$pagination->limit = 10;
+		$pagination->limit = 2;
 		$pagination->url = $this->url->link('information/posts', 'page={page}');
 		
 		$data['pagination'] = $pagination->render();
 	 
-		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($total - 10)) ? $total : ((($page - 1) * 10) + 10), $total, ceil($total / 10));
+		$data['results'] = sprintf($this->language->get('text_pagination'), ($total) ? (($page - 1) * 2) + 1 : 0, ((($page - 1) * 2) > ($total - 2)) ? $total : ((($page - 1) * 2) + 2), $total, ceil($total / 2));
 
 		$data['heading_title'] = $this->language->get('heading_title');
 		$data['text_title'] = $this->language->get('text_title');
@@ -63,7 +63,7 @@ class ControllerInformationPosts extends Controller {
 		foreach ($all_posts as $posts) {
 			$data['all_posts'][] = array (
 				'title' 		=> $posts['title'],
-				'image'			=> $this->model_tool_image->resize($posts['image'], 200, 200),
+				'image'			=> $this->model_tool_image->resize($posts['image'], 732, 412),
 				'description' 	=> strip_tags(html_entity_decode($posts['short_description'])),
 				'view' 			=> $this->url->link('information/posts/posts', 'posts_id=' . $posts['posts_id']),
 				'date_added' 	=> date($this->language->get('date_format_short'), strtotime($posts['date_added']))

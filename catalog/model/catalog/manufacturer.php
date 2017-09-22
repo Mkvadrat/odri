@@ -56,4 +56,16 @@ class ModelCatalogManufacturer extends Model {
 			return $manufacturer_data;
 		}
 	}
+		
+	public function getTotalManufactureres($data = array()) {
+		$sql = "SELECT COUNT(DISTINCT p.manufacturer_id) AS total";
+
+		$sql .= " FROM " . DB_PREFIX . "manufacturer p";
+
+		$sql .= " LEFT JOIN " . DB_PREFIX . "manufacturer_description pd ON (p.manufacturer_id = pd.manufacturer_id) LEFT JOIN " . DB_PREFIX . "manufacturer_to_store p2s ON (p.manufacturer_id = p2s.manufacturer_id) WHERE pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p2s.store_id = '" . (int)$this->config->get('config_store_id') . "'";
+
+		$query = $this->db->query($sql);
+
+		return $query->row['total'];
+	}
 }

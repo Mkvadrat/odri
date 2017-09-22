@@ -49,7 +49,6 @@
 				  <td width="1" style="text-align: center;"><input type="checkbox" onclick="$('input[name*=\'selected\']').attr('checked', this.checked);" /></td>
 				  <td class="text-left"><?php echo $text_title; ?></td>
 				  <td class="text-left"><?php echo $text_short_description; ?></td>
-				  <td class="text-center">В модуле</td>
 				  <td class="text-left"><?php echo $text_date; ?></td>
 				  <td class="text-right"><?php echo $text_action; ?></td>
 				</tr>
@@ -61,7 +60,6 @@
 					<td width="1" style="text-align: center;"><input type="checkbox" name="selected[]" value="<?php echo $news['news_id']; ?>" /></td>
 					<td class="text-left"><a href="<?php echo $news['edit']; ?>"><?php echo $news['title']; ?></a></td>
 					<td class="text-left"><?php echo $news['short_description']; ?></td>
-					<td class="text-center ajaxstatus" id="news<?php echo $news['news_id']; ?>" data-id="<?php echo $news['news_id']; ?>" data-value="<?php echo $news['module']; ?>"><?php echo $news['module_status']; ?></td>
 					<td class="text-left"><?php echo $news['date_added']; ?></td>
 					<td class="text-right"><a href="<?php echo $news['edit']; ?>"><?php echo $text_edit; ?></a></td>
 				  </tr>
@@ -82,27 +80,4 @@
     </div>
   </div>
 </div>
-<script type="text/javascript"><!--
-$('.ajaxstatus').click(function() {
-	var news_id=$(this).data('id');
-	var value=$(this).data('value');
-	$.ajax({
-		url: 'index.php?route=catalog/news/setModule&token=<?php echo $token; ?>',
-		type: 'get',
-		data: {news_id:news_id,value:value},
-		dataType: 'html',
-		success: function(html) {
-			if(html!=''){				
-				$('#news'+news_id).html(html);
-				if(value==1){
-					$('#news'+news_id).data('value',0);
-				} else {
-					$('#news'+news_id).data('value',1);
-				}
-				if(value==0){ $('#news'+news_id).css('background','rgb(117, 167, 77)'); } else { $('#news'+news_id).css('background','rgb(245, 107, 107)'); }
-			}
-		}
-	});
-});
-//--></script>
 <?php echo $footer; ?>

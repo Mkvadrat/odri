@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title'] 	= 'Статьи';
+$_['heading_title'] 	= 'Бьюти-проба';
  
 // Text
 $_['text_title'] 		= 'Title';

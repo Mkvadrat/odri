@@ -15,22 +15,7 @@
                 <div class="col-md-9">
                     <article>
                         
-                        <ul class="bread-crumbs">
-                        <?php			
-                          $count = count($breadcrumbs);
-                          $i=1;
-                          foreach ($breadcrumbs as $breadcrumb) {
-                            if($i!=$count){
-                        ?>
-                              <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a><?php echo ' ' . $breadcrumb['separator']; ?></li>
-                        <?php
-                            }else{
-                              echo '<li><span> '.$breadcrumb['text'] . '</span></li>'; 
-                            }		
-                            $i++;
-                          } 
-                        ?>
-                        </ul>
+                       <h1 class="title-section"><?php echo $heading_title; ?></h1>
 
                         <div class="short-description">
                             <?php if ($images) { ?>
@@ -64,8 +49,6 @@
                             </div>
                             <?php } ?>
     
-                            <h2 class="title-section"><?php echo $heading_title; ?></h2>
-                            
                             <?php if ($manufacturer) { ?>
                                 <p class="manufacturer">Производитель: <a href="<?php echo $manufacturers; ?>"><?php echo $manufacturer; ?></a></p>
                             <?php } ?>

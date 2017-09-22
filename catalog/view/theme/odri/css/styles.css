@@ -1227,3 +1227,16 @@ p {
   background-color: #eebed8;
   color: white;
 }
+
+.all-manufacturer a{
+  color: white !important;
+}
+
+.all-manufacturer{
+  display: inline-block;
+  border-radius: 3px;
+  background-color: #eebed8;
+  padding: 0px 10px 0px 15px;
+  font-size: 13px;
+  font-weight: 400;
+}

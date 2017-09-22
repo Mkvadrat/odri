@@ -13,6 +13,7 @@
 					</aside>
 				</div>
 				<div class="col-md-6">
+					<?php if($all_news){ ?>
 					<?php foreach ($all_news as $news) { ?>
 					<?php if ($news['image']) { ?>
 					<article>
@@ -31,13 +32,20 @@
 					</article>
 					<?php } ?>
 					<?php } ?>
-					
+					<?php }else{ ?>
+					<article>
+					<h2 class="title-section">Акций не найдено!</h2>
+					</article>
+					<?php } ?>
+
+					<?php if ($pagination) { ?>
 					<article class="paggination-action">
 						<p>Страницы:</p>
 						<ul class="paggination-list">
 							<?php echo $pagination; ?>
                         </ul>
-					</article>	
+					</article>
+					<?php } ?>
 				</div>
 	
 				<div class="col-md-3">

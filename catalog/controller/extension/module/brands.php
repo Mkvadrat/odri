@@ -25,7 +25,7 @@ class ControllerExtensionModuleBrands extends Controller {
 			
 			$data['all_brands'][] = array (
 				'image' => $image,
-				'view'  => $this->url->link('product/product', 'manufacturer_id=' . $brands['manufacturer_id'] )
+				'view'  => $this->url->link('product/manufacturer/info/', 'manufacturer_id=' . $brands['manufacturer_id'] )
 			);
 		}
 		

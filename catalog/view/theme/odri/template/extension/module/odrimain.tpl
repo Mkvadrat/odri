@@ -21,9 +21,7 @@
                     <?php } ?>
                 </div>
   
-                <div class="banner">
-                  <?php echo $html; ?>
-                </div>
+                <?php echo $html; ?>
             </div>
             <div class="col-md-3">
                 <aside>

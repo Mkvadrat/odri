@@ -17,7 +17,7 @@
                                 <?php if($i >6) break; ?>
                                 <li><a href="<?php echo $manufacturers['href']; ?>"><?php echo $manufacturers['name']; ?></a></li>
                                 <?php } ?>
-                                <li class="all-manufacturer"><a href="<?php echo $all_manufacturer; ?>">Все</a></li>
+                                <li class="all-manufacturer"><a href="<?php echo $all_manufacturers; ?>">Все</a></li>
                             </ul>
                             <?php } ?>
                         </section>

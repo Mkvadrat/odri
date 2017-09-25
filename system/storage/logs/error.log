@@ -375,3 +375,65 @@
 2017-09-22 17:26:27 - PHP Notice:  Undefined index: start in D:\OpenServer\domains\odri.loc\catalog\model\catalog\manufacturer.php on line 31
 2017-09-22 17:26:27 - PHP Notice:  Undefined index: start in D:\OpenServer\domains\odri.loc\catalog\model\catalog\manufacturer.php on line 39
 2017-09-22 17:46:21 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_list.tpl on line 20
+2017-09-25 11:09:47 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:09:47 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:09:47 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:09:47 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:09:47 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:09:47 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:24 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:24 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:24 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:24 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:24 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:24 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:58 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:58 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:58 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:58 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:58 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:10:58 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:11:13 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:11:13 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:11:13 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:11:13 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:11:13 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:11:13 - PHP Notice:  Undefined index: country in D:\OpenServer\domains\odri.loc\admin\controller\catalog\manufacturer.php on line 178
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 171
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 172
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 171
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 172
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 171
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 172
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 171
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 172
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 171
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 172
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 171
+2017-09-25 11:23:58 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 172
+2017-09-25 11:23:58 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_info.tpl on line 20
+2017-09-25 11:24:10 - PHP Notice:  Array to string conversion in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_info.tpl on line 20
+2017-09-25 12:24:20 - PHP Warning:  Missing argument 2 for ModelCatalogProduct::getPopularProductsFromManufacturer() in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 293
+2017-09-25 12:24:20 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 294
+2017-09-25 12:24:20 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 297
+2017-09-25 12:24:20 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 303
+2017-09-25 12:24:20 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 275
+2017-09-25 12:25:09 - PHP Warning:  Missing argument 2 for ModelCatalogProduct::getPopularProductsFromManufacturer() in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 293
+2017-09-25 12:25:09 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 294
+2017-09-25 12:25:09 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 297
+2017-09-25 12:25:09 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 303
+2017-09-25 12:25:09 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 275
+2017-09-25 12:25:34 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 276
+2017-09-25 12:25:34 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 276
+2017-09-25 12:25:34 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 276
+2017-09-25 12:25:34 - PHP Notice:  Undefined variable: result in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 276
+2017-09-25 12:26:45 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 294
+2017-09-25 12:26:45 - PHP Notice:  Undefined variable: manufacturer_id in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 296
+2017-09-25 12:26:45 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 305
+2017-09-25 12:26:45 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 311
+2017-09-25 12:26:45 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 275
+2017-09-25 12:28:21 - PHP Notice:  Undefined variable: limit in D:\OpenServer\domains\odri.loc\catalog\model\catalog\product.php on line 294
+2017-09-25 12:35:35 - PHP Notice:  Undefined index: tax in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_info.tpl on line 59
+2017-09-25 12:35:35 - PHP Notice:  Undefined index: tax in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_info.tpl on line 59
+2017-09-25 12:35:35 - PHP Notice:  Undefined index: tax in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_info.tpl on line 59
+2017-09-25 12:35:35 - PHP Notice:  Undefined index: tax in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\manufacturer_info.tpl on line 59

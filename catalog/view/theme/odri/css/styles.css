@@ -1240,3 +1240,7 @@ p {
   font-size: 13px;
   font-weight: 400;
 }
+
+.description-brand{
+  min-height: 200px;
+}

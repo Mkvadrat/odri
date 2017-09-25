@@ -16,7 +16,7 @@ class ControllerProductManufacturer extends Controller {
 
 		$data['button_continue'] = $this->language->get('button_continue');
 		
-		$data['all_manufacturer'] = $this->url->link('product/manufacturer');
+		$data['all_manufacturers'] = $this->url->link('product/manufacturer');
 
 		$data['breadcrumbs'] = array();
 
@@ -161,6 +161,19 @@ class ControllerProductManufacturer extends Controller {
 			'text' => $this->language->get('text_brand'),
 			'href' => $this->url->link('product/manufacturer')
 		);
+		
+		$all_manufacturer = $this->model_catalog_manufacturer->getManufacturers();
+		
+		$data['all_manufacturer'] = array();
+		
+		$data['all_manufacturers'] = $this->url->link('product/manufacturer');
+
+		foreach ($all_manufacturer as $manufacturer) {			
+			$data['all_manufacturer'][] = array(
+				'name' => $manufacturer['name'],
+				'href' => $this->url->link('product/manufacturer/info', 'manufacturer_id=' . $manufacturer['manufacturer_id']),
+			);
+		}
 
 		$manufacturer_info = $this->model_catalog_manufacturer->getManufacturer($manufacturer_id);
 
@@ -206,13 +219,15 @@ class ControllerProductManufacturer extends Controller {
 			}
 
 			if ($manufacturer_info['image']) {
-				$data['thumb'] = $this->model_tool_image->resize($manufacturer_info['image'], $this->config->get($this->config->get('config_theme') . '_image_category_width'), $this->config->get($this->config->get('config_theme') . '_image_category_height'));
+				$data['thumb'] = $this->model_tool_image->resize($manufacturer_info['image'], 120, 70);
 				$this->document->setOgImage($data['thumb']);
 			} else {
 				$data['thumb'] = '';
 			}
 
 			$data['description'] = html_entity_decode($manufacturer_info['description'], ENT_QUOTES, 'UTF-8');
+			
+			$data['country'] = $manufacturer_info['country'];
 
 			$data['text_empty'] = $this->language->get('text_empty');
 			$data['text_quantity'] = $this->language->get('text_quantity');
@@ -235,6 +250,8 @@ class ControllerProductManufacturer extends Controller {
 			$data['compare'] = $this->url->link('product/compare');
 
 			$data['products'] = array();
+			
+			$data['popular'] = array();
 
 			$filter_data = array(
 				'filter_manufacturer_id' => $manufacturer_id,
@@ -243,10 +260,48 @@ class ControllerProductManufacturer extends Controller {
 				'start'                  => ($page - 1) * $limit,
 				'limit'                  => $limit
 			);
+			
+			$popular_data = array(
+				'manufacturer_id' => $manufacturer_id,
+				'limit'           => 4
+			);
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
 			$results = $this->model_catalog_product->getProducts($filter_data);
+			
+			$getPupularProducts = $this->model_catalog_product->getPopularProductsFromManufacturer($popular_data);
+			
+			foreach ($getPupularProducts as $popular) {
+				if ($popular['image']) {
+					$image = $this->model_tool_image->resize($popular['image'], $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+				} else {
+					$image = $this->model_tool_image->resize('placeholder.png', $this->config->get($this->config->get('config_theme') . '_image_product_width'), $this->config->get($this->config->get('config_theme') . '_image_product_height'));
+				}
+				
+				if ($this->customer->isLogged() || !$this->config->get('config_customer_price')) {
+					$price = $this->currency->format($this->tax->calculate($popular['price'], $popular['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				} else {
+					$price = false;
+				}
+
+				if ((float)$popular['special']) {
+					$special = $this->currency->format($this->tax->calculate($popular['special'], $popular['tax_class_id'], $this->config->get('config_tax')), $this->session->data['currency']);
+				} else {
+					$special = false;
+				}
+				
+				$data['popular'][] = array(
+					'product_id'  => $popular['product_id'],
+					'thumb'       => $image,
+					'name'        => $popular['name'],
+					'description' => utf8_substr(strip_tags(html_entity_decode($popular['description'], ENT_QUOTES, 'UTF-8')), 0, $this->config->get($this->config->get('config_theme') . '_product_description_length')) . '..',
+					'price'       => $price,
+					'special'     => $special,
+					'href'        => $this->url->link('product/product', 'manufacturer_id=' . $popular['manufacturer_id'] . '&product_id=' . $popular['product_id'] . $url)
+				);
+				
+			}
 
 			foreach ($results as $result) {
 				if ($result['image']) {

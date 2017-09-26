@@ -1,6 +1,10 @@
 <?php
 class ControllerStartupMaintenance extends Controller {
 	public function index() {
+		// OCFilter start
+		$this->load->controller('extension/module/ocfilter/initialise');
+		// OCFilter end
+		
 		if ($this->config->get('config_maintenance')) {
 			// Route
 			if (isset($this->request->get['route']) && $this->request->get['route'] != 'startup/router') {

@@ -84,6 +84,16 @@ class ControllerCommonColumnLeft extends Controller {
 				);
 			}
 			
+			// OCFilter start
+			if ($this->user->hasPermission('access', 'catalog/ocfilter')) {
+				$catalog[] = array(
+					'name'	   => $this->language->get('text_ocfilter'),
+					'href'     => $this->url->link('catalog/ocfilter', 'token=' . $this->session->data['token'], true),
+					'children' => array()
+				);
+			}
+			// OCFilter end
+			
 			if ($this->user->hasPermission('access', 'catalog/filter')) {
 				$catalog[] = array(
 					'name'	   => $this->language->get('text_filter'),

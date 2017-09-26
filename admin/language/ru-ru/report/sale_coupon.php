@@ -1,12 +1,12 @@
 <?php
 // Heading
-$_['heading_title']    = 'Отчет по купонам';
+$_['heading_title']    = 'Отчет по подарочным картам';
 
 // Text
-$_['text_list']        = 'Список купонов';
+$_['text_list']        = 'Список подарочных карт';
 
 // Column
-$_['column_name']      = 'Название купона';
+$_['column_name']      = 'Название подарочной карты';
 $_['column_code']      = 'Код';
 $_['column_orders']    = 'Заказов';
 $_['column_total']     = 'Итого';

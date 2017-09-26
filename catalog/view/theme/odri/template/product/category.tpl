@@ -8,53 +8,7 @@
                 <div class="col-md-3">
                     <aside>
                         <section>
-                            <p class="title-section">Пол</p>
-                            <ul class="list-text">
-                                <li><a href="#">Для женщин</a></li>
-                                <li><a href="#">Для мужчин</a></li>
-                                <li><a href="#">Для детей</a></li>
-                                <li class="all"><a href="#">Все</a></li>
-                            </ul>
-                        </section>
-                    </aside>
-
-                    <aside>
-                        <section>
-                            <p class="title-section">Категория</p>
-                            <ul class="list-text">
-                                <li><a href="#">Для ванн и душа</a></li>
-                                <li><a href="#">Увлажнение</a></li>
-                                <li><a href="#">Cкрабы, маски, коррекция</a></li>
-                                <li><a href="#">Уход за руками и ногтями</a></li>
-                                <li><a href="#">Уход за ногами</a></li>
-                                <li><a href="#">Для загара</a></li>
-                                <li><a href="#">Автозагары, бронзаты, солнечный макияж</a></li>
-                                <li><a href="#">Антиперспиранты</a></li>
-                                <li><a href="#">Интимная гигиена</a></li>
-                                <li><a href="#">Удаление волос</a></li>
-                                <li><a href="#">Спа-процедуры и массаж</a></li>
-                                <li><a href="#">Гигиена полости рта</a></li>
-                                <li class="all"><a href="#">Все</a></li>
-                            </ul>
-                        </section>
-                    </aside>
-
-                    <aside>
-                        <section>
-                            <p class="title-section">Бренд</p>
-                            <ul class="list-text">
-                                <li><a href="#">Adidas</a></li>
-                                <li><a href="#">Anna Lotan</a></li>
-                                <li><a href="#">Be Natural</a></li>
-                                <li><a href="#">Caudalie</a></li>
-                                <li><a href="#">Collistar</a></li>
-                                <li><a href="#">Dr.Sea</a></li>
-                                <li><a href="#">EOS</a></li>
-                                <li><a href="#">Essence</a></li>
-                                <li><a href="#">Estel Professional</a></li>
-                                <li><a href="#">Eva Esthetic</a></li>
-                                <li class="all"><a href="#">Все</a></li>
-                            </ul>
+                            <?php echo $column_left; ?>
                         </section>
                     </aside>
                 </div>

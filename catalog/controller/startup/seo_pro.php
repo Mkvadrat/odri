@@ -25,6 +25,11 @@ class ControllerStartupSeoPro extends Controller {
 		// Add rewrite to url class
 		if ($this->config->get('config_seo_url')) {
 			$this->url->addRewrite($this);
+			// OCFilter start
+			if (!is_null($this->registry->get('ocfilter'))) {
+				$this->url->addRewrite($this->registry->get('ocfilter'));
+			}
+			// OCFilter end
 		} else {
 			return;
 		}

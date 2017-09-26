@@ -8,7 +8,7 @@ class ControllerProductCategory extends Controller {
 		$this->load->model('catalog/product');
 
 		$this->load->model('tool/image');
-
+		
 		if (isset($this->request->get['filter'])) {
 			$filter = $this->request->get['filter'];
 		} else {
@@ -38,6 +38,14 @@ class ControllerProductCategory extends Controller {
 		} else {
 			$limit = $this->config->get($this->config->get('config_theme') . '_product_limit');
 		}
+		
+		// OCFilter start
+		if (isset($this->request->get['filter_ocfilter'])) {
+		  $filter_ocfilter = $this->request->get['filter_ocfilter'];
+		} else {
+		  $filter_ocfilter = '';
+		}
+		// OCFilter end
 
 		$data['breadcrumbs'] = array();
 
@@ -142,6 +150,12 @@ class ControllerProductCategory extends Controller {
 			$data['compare'] = $this->url->link('product/compare');
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -185,6 +199,10 @@ class ControllerProductCategory extends Controller {
 				'start'              => ($page - 1) * $limit,
 				'limit'              => $limit
 			);
+			
+			// OCFilter start
+			$filter_data['filter_ocfilter'] = $filter_ocfilter;
+			// OCFilter end
 
 			$product_total = $this->model_catalog_product->getTotalProducts($filter_data);
 
@@ -236,6 +254,12 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -304,6 +328,12 @@ class ControllerProductCategory extends Controller {
 			);
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -332,6 +362,12 @@ class ControllerProductCategory extends Controller {
 			}
 
 			$url = '';
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];
@@ -360,12 +396,15 @@ class ControllerProductCategory extends Controller {
 			$data['results'] = sprintf($this->language->get('text_pagination'), ($product_total) ? (($page - 1) * $limit) + 1 : 0, ((($page - 1) * $limit) > ($product_total - $limit)) ? $product_total : ((($page - 1) * $limit) + $limit), $product_total, ceil($product_total / $limit));
 
 			// http://googlewebmastercentral.blogspot.com/2011/09/pagination-with-relnext-and-relprev.html
-			if ($page == 1) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'canonical');
-			} elseif ($page == 2) {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'prev');
-			} else {
-			    $this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page - 1), true), 'prev');
+			if (isset($this->request->get['page'])) {
+				if ($page == 1) {
+					$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'canonical');
+				} elseif ($page == 2) {
+					$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'], true), 'prev');
+				} else {
+					$this->document->addLink($this->url->link('product/category', 'path=' . $category_info['category_id'] . '&page='. ($page - 1), true), 'prev');
+				}
+				
 			}
 
 			if ($limit && ceil($product_total / $limit) > $page) {
@@ -375,6 +414,82 @@ class ControllerProductCategory extends Controller {
 			$data['sort'] = $sort;
 			$data['order'] = $order;
 			$data['limit'] = $limit;
+			
+			// OCFilter Start
+			$ocfilter_page_info = $this->load->controller('extension/module/ocfilter/getPageInfo');
+			
+			if ($ocfilter_page_info) {
+			  $this->document->setTitle($ocfilter_page_info['meta_title']);
+			
+			  if ($ocfilter_page_info['meta_description']) {
+					  $this->document->setDescription($ocfilter_page_info['meta_description']);
+			  }
+			
+			  if ($ocfilter_page_info['meta_keyword']) {
+					  $this->document->setKeywords($ocfilter_page_info['meta_keyword']);
+			  }
+			
+					$data['heading_title'] = $ocfilter_page_info['title'];
+			
+			  if ($ocfilter_page_info['description'] && !isset($this->request->get['page']) && !isset($this->request->get['sort']) && !isset($this->request->get['order']) && !isset($this->request->get['search']) && !isset($this->request->get['limit'])) {
+				  $data['description'] = html_entity_decode($ocfilter_page_info['description'], ENT_QUOTES, 'UTF-8');
+			  }
+			} else {
+			  $meta_title = $this->document->getTitle();
+			  $meta_description = $this->document->getDescription();
+			  $meta_keyword = $this->document->getKeywords();
+			
+			  $filter_title = $this->load->controller('extension/module/ocfilter/getSelectedsFilterTitle');
+			
+			  if ($filter_title) {
+				if (false !== strpos($meta_title, '{filter}')) {
+				  $meta_title = trim(str_replace('{filter}', $filter_title, $meta_title));
+				} else {
+				  $meta_title .= ' ' . $filter_title;
+				}
+			
+				$this->document->setTitle($meta_title);
+			
+				if ($meta_description) {
+				  if (false !== strpos($meta_description, '{filter}')) {
+					$meta_description = trim(str_replace('{filter}', $filter_title, $meta_description));
+				  } else {
+					$meta_description .= ' ' . $filter_title;
+				  }
+			
+					  $this->document->setDescription($meta_description);
+				}
+			
+				if ($meta_keyword) {
+				  if (false !== strpos($meta_keyword, '{filter}')) {
+					$meta_keyword = trim(str_replace('{filter}', $filter_title, $meta_keyword));
+				  } else {
+					$meta_keyword .= ' ' . $filter_title;
+				  }
+			
+				  $this->document->setKeywords($meta_keyword);
+				}
+			
+				$heading_title = $data['heading_title'];
+			
+				if (false !== strpos($heading_title, '{filter}')) {
+				  $heading_title = trim(str_replace('{filter}', $filter_title, $heading_title));
+				} else {
+				  $heading_title .= ' ' . $filter_title;
+				}
+			
+				$data['heading_title'] = $heading_title;
+			
+				$data['description'] = '';
+			  } else {
+				$this->document->setTitle(trim(str_replace('{filter}', '', $meta_title)));
+				$this->document->setDescription(trim(str_replace('{filter}', '', $meta_description)));
+				$this->document->setKeywords(trim(str_replace('{filter}', '', $meta_keyword)));
+			
+				$data['heading_title'] = trim(str_replace('{filter}', '', $data['heading_title']));
+			  }
+			}
+			// OCFilter End
 
 			$data['continue'] = $this->url->link('common/home');
 
@@ -392,6 +507,12 @@ class ControllerProductCategory extends Controller {
 			if (isset($this->request->get['path'])) {
 				$url .= '&path=' . $this->request->get['path'];
 			}
+			
+			// OCFilter start
+			if (isset($this->request->get['filter_ocfilter'])) {
+				$url .= '&filter_ocfilter=' . $this->request->get['filter_ocfilter'];
+			}
+			// OCFilter end
 
 			if (isset($this->request->get['filter'])) {
 				$url .= '&filter=' . $this->request->get['filter'];

@@ -1,6 +1,6 @@
 <?php
 // Heading
-$_['heading_title']    = 'Купоны';
+$_['heading_title']    = 'Подарочные карты';
 
 // Text
 $_['text_extension']   = 'Общая сумма заказа';

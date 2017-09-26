@@ -1,5 +1,8 @@
 <?php
 // Text
+// OCFilter start
+$_['text_ocfilter'] = 'Фильтр товаров OCFilter';
+// OCFilter end
 $_['text_affiliate']          				= 'Партнеры';
 $_['text_api']          					= 'API';
 $_['text_attribute']          				= 'Атрибуты';
@@ -11,7 +14,7 @@ $_['text_news']          				    = 'Акции';
 $_['text_posts']          				    = 'Блог';
 $_['text_category']          				= 'Категории';
 $_['text_country']          				= 'Страны';
-$_['text_coupon']          					= 'Купоны';
+$_['text_coupon']          					= 'Подарочные карты';
 $_['text_currency']          				= 'Валюты';
 $_['text_customer']          				= 'Покупатели';
 $_['text_customer_group']          			= 'Группы покупателей';
@@ -45,7 +48,7 @@ $_['text_report_sale_order']          		= 'Заказы';
 $_['text_report_sale_tax']          		= 'Налоги';
 $_['text_report_sale_shipping']          	= 'Доставка';
 $_['text_report_sale_return']          		= 'Возвраты';
-$_['text_report_sale_coupon']          		= 'Купоны';
+$_['text_report_sale_coupon']          		= 'Подарочные карты';
 $_['text_report_product']                   = 'Товары';
 $_['text_report_product_viewed']          	= 'Просмотренные';
 $_['text_report_product_purchased']         = 'Купленные';

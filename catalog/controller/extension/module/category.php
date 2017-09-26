@@ -47,7 +47,7 @@ class ControllerExtensionModuleCategory extends Controller {
 					);
 				}
 			}
-
+			
 			$filter_data = array(
 				'filter_category_id'  => $category['category_id'],
 				'filter_sub_category' => true

@@ -12,7 +12,7 @@ $_['text_recurring_item']		= 'Повторяющийся элемент';
 $_['text_length']				= ' для %s платежей';
 
 // Entry
-$_['express_entry_coupon']		= 'Введите ваш купон:';
+$_['express_entry_coupon']		= 'Введите ваш подарочную карту:';
 
 // Button
 $_['button_express_coupon']		= 'Добавить';

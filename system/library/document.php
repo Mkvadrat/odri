@@ -3,11 +3,24 @@ class Document {
 	private $title;
 	private $description;
 	private $keywords;
+	// OCFilter start
+	private $noindex = false;
+	// OCFilter end
 	private $links = array();
 	private $styles = array();
 	private $scripts = array();
 	private $og_image;
-
+	
+	// OCFilter start
+	public function setNoindex($state = false) {
+	  $this->noindex = $state;
+	}
+  
+	public function isNoindex() {
+		return $this->noindex;
+	}
+	// OCFilter end
+  
 	public function setTitle($title) {
 		$this->title = $title;
 	}

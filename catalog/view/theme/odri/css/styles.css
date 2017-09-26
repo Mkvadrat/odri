@@ -1244,3 +1244,33 @@ p {
 .description-brand{
   min-height: 200px;
 }
+
+.list-text li a{
+  text-decoration: none;
+}
+
+/*Фильтр*/
+#ocfilter{
+  border-color: #FFF;
+  box-shadow: none;
+}
+
+.ocfilter-option{
+  border: none;
+}
+
+.noUi-base .noUi-connect{
+  background: rgb(221,148,188);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: rgb(221,148,188);
+  border-color: rgb(221,148,188);
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: rgb(221,148,188);
+  border-color: rgb(221,148,188);
+}

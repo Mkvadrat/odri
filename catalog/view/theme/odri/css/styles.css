@@ -1212,10 +1212,9 @@ p {
   color: #4f4f4f;
 }
 
+/*Изменения*/
 .form-group {
-  /*изменения*/
   margin-bottom: 0px;
-  /*изменения*/
 }
 
 .paggination-action .paggination-list{
@@ -1273,4 +1272,13 @@ p {
   color: #fff;
   background-color: rgb(221,148,188);
   border-color: rgb(221,148,188);
+}
+
+.text-search{
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.button-search{
+  margin-top: 20px;
 }

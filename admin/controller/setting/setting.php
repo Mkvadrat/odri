@@ -576,6 +576,30 @@ class ControllerSettingSetting extends Controller {
 		} else {
 			$data['config_skype'] = $this->config->get('config_skype');
 		}
+		
+		if (isset($this->request->post['config_google'])) {
+			$data['config_google'] = $this->request->post['config_google'];
+		} else {
+			$data['config_google'] = $this->config->get('config_google');
+		}
+		
+		if (isset($this->request->post['config_instagram'])) {
+			$data['config_instagram'] = $this->request->post['config_instagram'];
+		} else {
+			$data['config_instagram'] = $this->config->get('config_instagram');
+		}
+		
+		if (isset($this->request->post['config_vk'])) {
+			$data['config_vk'] = $this->request->post['config_vk'];
+		} else {
+			$data['config_vk'] = $this->config->get('config_vk');
+		}
+		
+		if (isset($this->request->post['config_facebook'])) {
+			$data['config_facebook'] = $this->request->post['config_facebook'];
+		} else {
+			$data['config_facebook'] = $this->config->get('config_facebook');
+		}
 
 		if (isset($this->request->post['config_image'])) {
 			$data['config_image'] = $this->request->post['config_image'];

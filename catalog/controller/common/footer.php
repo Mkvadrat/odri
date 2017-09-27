@@ -53,6 +53,10 @@ class ControllerCommonFooter extends Controller {
 		$data['address'] = $this->config->get('config_address');
 		$data['registration'] = $this->config->get('config_registration');
 		$data['сommercial_registry'] = $this->config->get('config_сommercial_registry');
+		$data['google'] = $this->config->get('config_google');
+		$data['instagram'] = $this->config->get('config_instagram');
+		$data['vk'] = $this->config->get('config_vk');
+		$data['facebook'] = $this->config->get('config_facebook');
 		
 		$data['powered'] = sprintf($this->language->get('text_powered'), $this->config->get('config_name'), date('Y', time()));
 

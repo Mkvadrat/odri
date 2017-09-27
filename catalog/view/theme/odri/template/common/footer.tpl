@@ -28,10 +28,10 @@
                         </ul>
                     </address>
                     <ul class="social-list">
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
-                        <li><a href="#"></a></li>
+                        <li><a href="<?php echo $google; ?>"></a></li>
+                        <li><a href="<?php echo $instagram; ?>"></a></li>
+                        <li><a href="<?php echo $vk; ?>"></a></li>
+                        <li><a href="<?php echo $facebook; ?>"></a></li>
                     </ul>
                     <p class="make-in"><a href="http://mkvadrat.com/">Сайт разработан в <img src="catalog/view/theme/odri/image/m2.jpg" alt=""></a></p>
                     <div class="footer-line"></div>

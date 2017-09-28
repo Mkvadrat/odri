@@ -131,7 +131,6 @@ input:focus:-ms-input-placeholder {
       padding-top: 8px; }
     .list-products li a {
       display: inline-block;
-      background-color: #e0e0e0;
       color: #111;
       font-size: 14px;
       font-weight: 400;
@@ -141,8 +140,6 @@ input:focus:-ms-input-placeholder {
       -ms-transition: background-color 0.5s;
       -o-transition: background-color 0.5s;
       transition: background-color 0.5s; }
-      .list-products li a:hover {
-        background-color: #bababa; }
 
 .list-brands {
   overflow: hidden; }
@@ -392,7 +389,6 @@ p {
       padding-top: 8px; }
   .owl-brands a {
     display: inline-block;
-    background-color: #e0e0e0;
     color: #111;
     font-size: 14px;
     font-weight: 400;
@@ -402,8 +398,6 @@ p {
     -ms-transition: background-color 0.5s;
     -o-transition: background-color 0.5s;
     transition: background-color 0.5s; }
-    .owl-brands a:hover {
-      background-color: #bababa; }
 
 .owl-carousel-brands {
   margin-bottom: 30px; }
@@ -1281,4 +1275,217 @@ p {
 
 .button-search{
   margin-top: 20px;
+}
+
+/* 28/09/2017 */
+
+#ocfilter-content div {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.option-name {
+  padding-bottom: 20px;
+}
+
+article .more-info,
+.form-horizontal .pull-right {
+  margin-top: 40px;
+}
+
+.breadcrumb {
+  padding: 8px 0;
+  background-color: transparent;
+}
+
+.breadcrumb a,
+.breadcrumb > li + li::before {
+  color: #dd809d;
+}
+
+#content h1 {
+  color: #dd809d;
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+  line-height: 14px;
+}
+
+#content p a,
+.form-horizontal .pull-right a,
+#content .well .form-group a {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  text-decoration: underline;
+}
+
+#content p a:hover,
+.form-horizontal .pull-right a:hover,
+#content .well .form-group a:hover {
+  text-decoration: none;
+}
+
+.form-horizontal fieldset legend,
+.form-horizontal .well fieldset legend,
+#content .well h2,
+#content h2,
+#form-review h2 {
+  color: #111;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  padding-bottom: 30px;
+}
+
+.form-horizontal fieldset label,
+#content .well .form-group label,
+#form-review .control-label {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+#content .well .form-group {
+  margin-bottom: 20px;
+}
+
+#content .well .form-group label,
+#form-review .control-label {
+  padding-bottom: 5px;
+}
+
+.form-horizontal .form-group input[type="text"],
+.form-horizontal .form-group input[type="email"],
+.form-horizontal .form-group input[type="tel"],
+.form-horizontal .form-group input[type="password"],
+#content .well .form-group input[type="text"],
+#content .well .form-group input[type="password"],
+.form-horizontal .form-group select {
+  margin-bottom: 15px !important;
+  border: 1px solid #d2d2d2;
+  border-radius: 3px;
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.form-horizontal .form-group input[type="radio"] {
+  position: relative;
+  top: 2px;
+}
+
+.form-horizontal .pull-right,
+.main-object .short-description .amount,
+.main-object .short-description .amount span {
+  color: #111;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.main-object .short-description .manufacturer,
+.main-object .short-description .manufacturer a {
+  color: #111;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.form-horizontal .pull-right input[type="checkbox"] {
+  position: relative;
+  top: 2px;
+}
+
+.form-horizontal .pull-right .btn {
+  display: block;
+  margin-top: 15px;
+}
+
+#content .list-unstyled {
+  padding-bottom: 20px;
+  padding-left: 8px;
+}
+
+#content .list-unstyled li {
+    color: #111;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+#content .list-unstyled li::before {
+    content: "";
+    position: absolute;
+    top: 11px;
+    left: -6px;
+    width: 3px;
+    height: 3px;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
+    background-color: #dd94bc;
+}
+
+#content .list-unstyled li a {
+    display: block;
+    color: #111;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration: none;
+    padding-left: 10px;
+}
+
+.table-bordered td {
+  text-align: center !important;
+}
+
+.buttons .pull-right {
+  margin-top: 30px;
+}
+
+.main-object .short-description .amount {
+  padding-bottom: 0;
+}
+
+#product select {
+  margin-top: 10px;
+}
+
+#review .text-right li {
+  display: inline-block;
+  list-style: none;
+  margin-left: 5px;
+}
+
+#review .text-right li a {
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+#form-review .help-block {
+  padding-top: 20px;
+  color: #111;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+#form-review .help-block .text-danger {
+  color: red;
+}
+
+#form-review fieldset legend {
+  padding-top: 20px;
 }

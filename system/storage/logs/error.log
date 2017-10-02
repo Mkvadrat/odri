@@ -1,1 +1,6 @@
+<<<<<<< HEAD
+2017-09-28 0:58:37 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 275
+2017-09-28 0:58:37 - PHP Warning:  Invalid argument supplied for foreach() in D:\OpenServer\domains\odri.loc\catalog\controller\product\manufacturer.php on line 275
+=======
 2017-09-28 15:13:18 - PHP Notice:  Undefined variable: pagination in D:\OpenServer\domains\odri.loc\catalog\view\theme\odri\template\product\review.tpl on line 20
+>>>>>>> 15650bd14d81dec4dd698ad00977bb793614d70f

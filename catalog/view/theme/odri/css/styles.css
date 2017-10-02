@@ -667,7 +667,11 @@ p {
 .main-text-page {
   overflow: hidden;
   background: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.13); }
+  /*box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);*/ }
+  
+header + .container {
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.13);
+}
 
 .main-index {
   padding: 0 20px;

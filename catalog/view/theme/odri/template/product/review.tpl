@@ -17,7 +17,14 @@
   </tr>
 </table>
 <?php } ?>
-<div class="text-right"><?php echo $pagination; ?></div>
+<?php if ($pagination) { ?>
+<article class="paggination-action">
+    <p>Страницы:</p>
+    <ul class="paggination-list">
+        <?php echo $pagination; ?>
+    </ul>
+</article>
+<?php } ?>
 <?php } else { ?>
 <p><?php echo $text_no_reviews; ?></p>
 <?php } ?>
